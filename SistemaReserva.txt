@@ -1,14 +1,51 @@
 Sistema de reservas: hoteles.
 
-- Habitaciones
-    - numero Habitaciones
-    - habitaciones ocupadas
-    - habitaciones desocupadas
-
-- Registrar Personas(Clientes)
-    - rut
+--------------------------MENU GENERAL--------------------------
+--------------------------LOGIN
+- Trabajador(admin)
+    - nombre
     - contraseña
+--------------------------REGISTRO
+- Trabajador(admin)
+    - id
+    - rut
     - nombre
     - apellido
-    - habitacion que quiere reservar
+    
+-------------------------- REGISTRO DENTRO DE LOGIN - EN CRUD - ADMINISTRAR CLIENTES
+- Registrar Personas(Clientes)
+    - id
+    - rut
+    - nombre
+    - apellido
+--------------------------
+--------------------------MENU ADMIN LOGIN--------------------------
+- MENU
+    - Administrar Clientes
+    - Administrar Habitaciones
+    - Administrar Reservaciones
 
+
+--------------------------CRUD--------------------------
+-Administrar Clientes
+    - Listar Clientes
+    - Registrar Cliente
+    - Modificar Cliente
+    - Eliminar Cliente
+
+-Administrar Habitaciones
+    - Listar Habitaciones
+    - Registrar Habitacion
+    - Modificar Habitacion
+    - Eliminar Habitacion
+
+-Administrar Reservaciones
+    - Listar Reservaciones = Mostrar numero de habitaciones
+    - Agregar una reserva = Ocupar una habitacion
+    - Modificar Reservacion = Cambiar habitacion por otra
+    - Eliminar Reservacion 
+
+
+
+
+Agregar, modificar, seleccionar, editar y eliminar.
