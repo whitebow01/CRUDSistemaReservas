@@ -1,0 +1,14 @@
+Sistema de reservas: hoteles.
+
+- Habitaciones
+    - numero Habitaciones
+    - habitaciones ocupadas
+    - habitaciones desocupadas
+
+- Registrar Personas(Clientes)
+    - rut
+    - contraseña
+    - nombre
+    - apellido
+    - habitacion que quiere reservar
+

@@ -1,0 +1,15 @@
+- Para la persistencia de los datos debe utilizar diccionarios y listas
+
+- Con la persistencia de datos deben desarrollarse las operaciones de Agregar, modificar, seleccionar, editar y eliminar.
+
+- Debe Crear un Menú para seleccionar las operaciones antes mencionadas.
+
+- Se deben validar el formato de los datos por ejemplo si se solicita números dentro de un rango debe validar el rango.
+
+- Debe atrapar las excepciones es decir la aplicación no se puede “Caer”.
+
+- El programa debe tener un control de acceso.
+
+- Las estructuras de persistencia deben tener cierta complejidad como, por ejemplo, una lista que contenga listas como elementos, un diccionario que tenga un entero como identificado y listas como valores, una lista que contenga diccionario como elementos etc.
+
+- Revisar la Rubrica para ver las especificaciones.
