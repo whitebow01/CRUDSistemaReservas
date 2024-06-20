@@ -11,6 +11,7 @@ Sistema de reservas: hoteles.
     - rut
     - nombre
     - apellido
+    - contraseña
     
 -------------------------- REGISTRO DENTRO DE LOGIN - EN CRUD - ADMINISTRAR CLIENTES
 - Registrar Personas(Clientes)

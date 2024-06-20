@@ -21,7 +21,7 @@ def registroTrabajador():
     print(f"Tus datos:  \n rut: {rutTrabajador} \n nombre: {nombreTrabajador}\n apellido:{apellidoTrabajador}\n contraseña: """)
 
 
-    ##MENU ADMIN - REGISTRO CLIENTE
+##MENU ADMIN - REGISTRO CLIENTE
 
 registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"}]
 
@@ -36,3 +36,35 @@ def registroCliente():
     registroClientes.append(registro)
     
     print(f"Cliente {nombreCliente} ingresado correctamente")
+
+
+##MENU ADMIN - REGISTRO HABITACIONES
+registroHabitaciones = [{1:16884,2:"1",3:"Individual",4:20000,5:"reservado" }]
+
+def registroHabitacion():
+    registro = {1:"",2:"",3:"",4:"",5:""}
+    idHaHabitacion = int(input("Ingrese id para habitacion"))#HACERLO ALEATORIO O AUTOINCREMENTAL
+    registro[1] = idHaHabitacion
+        # idHabitacion = []
+        ## IDS autoincrementales
+        # autoincrementalIdHabitacion = 1
+    numeroHabitacion = int("Ingrese numero de habitacion")#Tambien aleatorio o autoincremental
+    registro[2] = numeroHabitacion
+    tipoHabitacion = input("Ingrese tipo de habitacion")
+    registro[3] = tipoHabitacion
+    valorHabitacion = int(input("Ingrese valor habitacion"))
+    registro[4] = valorHabitacion
+    estadoHabitacion = input("Reservado/Disponible")
+    registro[5] = estadoHabitacion
+    
+    registroHabitaciones.append(registro)
+    print(f"""
+        Habitacion creada \n 
+        ID: {idHaHabitacion} \n 
+        Numero habitacion: {numeroHabitacion} \n 
+        Tipo habitacion: {tipoHabitacion} \n 
+        Valor habitacion: {valorHabitacion}
+        """)
+    
+
+##MENU ADMIN - REGISTRO DE RESERVACIONES

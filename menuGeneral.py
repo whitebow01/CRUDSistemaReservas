@@ -2,7 +2,7 @@ import registros
 import login
 import os
 
-menuLogin={1:login.menuLogin,2:registros.registroCliente}
+menuLogin={1:login.loginTrabajador,2:registros.registroTrabajador}
 
 
 def default():
@@ -19,7 +19,7 @@ while respuesta == "si":
     print("║                                          ║")
     print("║ Opción 1 > Iniciar sesión                ║")
     print("║                                          ║")
-    print("║ Opción 2 > Registrarse                   ║")
+    print("║ Opción 2 > Registrar                     ║")
     print("║                                          ║")
     print("║ Opción 5 > Salir                         ║")
     print("║                                          ║")
