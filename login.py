@@ -1,11 +1,15 @@
 import os,time
 import registros
-def menuLogin():
+
+def loginTrabajador():
+    
     usuarioCorrecto = False
     contraseñaCorrecta = False
     while not usuarioCorrecto or not contraseñaCorrecta:
         login_name = input("Ingrese su rut \n")
-        for usuario in registros.registroClientes:
+        listaTrabajadores = registros.registroTrabajadores#Esto llama a al registro con los trabajadores
+        #for usuario in registros.registroTrabajador: #Esto llama a la funcion no al registro db
+        for usuario in listaTrabajadores: 
             if login_name == usuario[1]:
                 usuarioCorrecto = True
                 print("Nombre de usuario correcto")
@@ -19,6 +23,7 @@ def menuLogin():
                     usuarioCorrecto = False  # Reiniciar si la contraseña es incorrecta
         if not usuarioCorrecto:
             print("Nombre de usuario incorrecto")
+        
         
         
         
