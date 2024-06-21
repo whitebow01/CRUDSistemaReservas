@@ -1,7 +1,7 @@
 import os,time
 
 ##MENU GENERAL - REGISTRO TRABAJADOR 
-registroTrabajadores = [{1:"15546854-5", 2:"Juan", 3: "Castro",4:"sss"}]
+registroTrabajadores = [{1:"555", 2:"Juan", 3: "Castro",4:"sss"}]
 
 def registroTrabajador():
     registro = {1:"", 2:"",3:"", 4:""}
@@ -23,7 +23,7 @@ def registroTrabajador():
 
 ##MENU ADMIN - REGISTRO CLIENTE
 
-registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"}]
+registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"},{1: "17854629-4", 2: "Carlos", 3: "Fernández"},{1: "20316587-7", 2: "Ana", 3: "Martínez"},{1: "18923467-1", 2: "Jorge", 3: "Pérez"},]
 
 def registroCliente():
     registro = {1:"",2:"",3:""}
