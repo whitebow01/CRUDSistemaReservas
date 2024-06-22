@@ -47,9 +47,9 @@ def administracionClientes():
             
     def eliminarCliente():
         rutCliente = input("Ingresa el rut del cliente")
-        for x in listaClientes:
-            if x[1] == rutCliente:
-                listaClientes.remove(x)
+        for cliente in listaClientes:
+            if cliente[1] == rutCliente:
+                listaClientes.remove(cliente)
                 print("Cliente eliminado")
                 break
             else:
@@ -59,17 +59,30 @@ def administracionClientes():
         encontrado = False
         
         rutCliente = input("Ingresa el rut del cliente")
-        for cliente in listaClientes:
-            if rutCliente == cliente[1]:
+        for cliente in listaClientes:    
+            if cliente[1] == rutCliente:
+                
                 print("Cliente encontrado")
-            nombre = input("Ingrese nombre a modificar")
-            cliente[2] = nombre
-            encontrado = True
-            print(f"Nombre cambiado a {nombre}")
-            break
-        if not encontrado:
-            print("No se encuentra el rut del cliente")
+                print("==============================")
 
+                print("1.Nombre \n 2.Apellido")
+                eleccion = input("Que quieres modificar??")
+                
+                if eleccion == "1":
+                    nombre = input("Ingrese nuevo nombre")
+                    cliente[2] = nombre
+                    print(f"Nombre cambiado a {nombre}")
+                elif eleccion == "2":
+                    apellido = input("Ingrese nuevo apellido")
+                    cliente[3] = apellido
+                    print(f"Apellido cambiado a {apellido}")
+                else:
+                    print("Eleccion incorrecta")
+                encontrado = True
+                break
+        
+        if not encontrado:
+            print("No se encuentra el rut del cliente")    
     
                 
     #DICCIONARIO CON MENU - ADMINISTRACION CLIENTES       
@@ -85,14 +98,14 @@ def administracionClientes():
         print("\n--- Administración de Clientes ---")
         print("Opcion 1:  Listar clientes")
         print("Opcion 2:  Registrar cliente")
-        print("Opcion 3: Modificar cliete")
+        print("Opcion 3: Modificar cliente")
         print("Opcion 4:  Eliminar cliente")
         print("Opcion 5: Volver al menu principal")
             
         opcion = int(input("ELija una opcion \n"))
         menuClientes.get(opcion,default)()
         
-        respuesta = input("Administrará algo mas en clientes?? si/no \n")
+        respuesta = input("Quiere hacer algo mas en menu cliente? si/no \n")
         respuesta = respuesta.lower()
             
         
