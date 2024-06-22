@@ -1,5 +1,5 @@
 import registros
-
+import random
 
 def default():
     print("Opcion fuera de rango") 
@@ -88,7 +88,7 @@ def administracionHabitaciones():
     def vistaHabitaciones():
         for x in listaHabitaciones:
             print("==============================")
-            print(f" ID: {x[1]} \n  N°Habitacion: {x[2]} \n Tipo:{x[3]} \n Valor:${4}, \n Etado:{x[5]} ")
+            print(f" ID: {x[1]} \n  N°Habitacion: {x[2]} \n Tipo:{x[3]} \n Valor:${4}, \n Etado:{x["reservado"]} ")
             print("==============================")
         
     #REGISTRAR HABITACION DIRECTO AL MENU
@@ -149,8 +149,34 @@ def administracionHabitaciones():
         respuesta = respuesta.lower()
 
 # RESERVACIONES
-reservaciones= [{}]
+def administracionReservaciones():
+    listaReservaciones = registros.registroReservaciones
 
+    # registros.registroReserva()
+    
+    def vistaReservas():
+        for x in listaReservaciones:
+            print(f"ID:{x[1]} \n Cliente:{x[2]} \n Habitacion:{x[3]}")
+            
+        
+        
+    menuReservaciones = {1:vistaReservas,
+                        2:registros.registroReserva,
+                        5:menuAdmin}
+    respuesta = "si"
+    while respuesta =="si":
+        print("\n--- Administración de Reservaciones ---")
+        print("Opcion 1:  Listar Reservaciones")
+        print("Opcion 2:  Registrar Reservacion")
+        # print("Opcion 3: Modificar Reservacion")
+        # print("Opcion 4:  Eliminar Reservacion")
+        print("Opcion 5: Volver al menu principal")
+            
+        opcion = int(input("ELija una opcion \n"))
+        menuReservaciones.get(opcion)()
+        
+        respuesta = input("Quiere hacer algo mas en menu de reservaciones? si/no \n")
+        respuesta = respuesta.lower()
 
 
 
@@ -158,7 +184,10 @@ reservaciones= [{}]
 #MENU ADMIN
 def menuAdmin():
     #DICCIONARIO CON MENU - MENU GENERAL ADMIN LOGEADO
-    menu ={1:administracionClientes, 2:administracionHabitaciones}
+    menu ={1:administracionClientes, 
+        2:administracionHabitaciones,
+        3:administracionReservaciones
+        }
 
     respuesta = "si"
     while respuesta == "si":
@@ -166,6 +195,7 @@ def menuAdmin():
         print("1. Administrar clientes")
         # print("2. Administrar trabajadores")
         print("2. Administrar habitaciones")
+        print("3. Administrar reservaciones")
         
         opcion = int(input("ELija una opcion \n"))
         menu.get(opcion, default)()
