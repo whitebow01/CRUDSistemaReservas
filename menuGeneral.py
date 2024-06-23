@@ -1,6 +1,6 @@
 import registros
 import login
-import os
+
 
 menuLogin={1:login.loginTrabajador,2:registros.registroTrabajador,3:exit}
 
@@ -34,4 +34,3 @@ while respuesta == "si":
     respuesta = respuesta.lower()
     
 
-os.system("cls")

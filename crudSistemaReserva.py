@@ -3,6 +3,7 @@ import random
 
 def default():
     print("Opcion fuera de rango") 
+    return
     
 
 #CLIENTES
@@ -18,14 +19,18 @@ def administracionClientes():
     #REGISTRAR CLIENTES DIRECTO AL MENU
             
     def eliminarCliente():
-        rutCliente = input("Ingresa el rut del cliente que quiere eliminar")
+        rutCliente = input("Ingresa el rut a eliminar \n")
         for cliente in listaClientes:
             if cliente[1] == rutCliente:
                 listaClientes.remove(cliente)
                 print("Cliente eliminado")
+                print("==============================")
+
                 break
             else:
                 print("Cliente no encontrado")
+                print("==============================")
+
     
     def modificarCliente():
         encontrado = False
@@ -41,21 +46,26 @@ def administracionClientes():
                 eleccion = input("Seleccione cual quiere modificar??")
                 
                 if eleccion == "1":
-                    nombre = input("Ingrese nuevo nombre")
+                    nombre = input("Ingrese nuevo nombre \n")
                     cliente[2] = nombre
                     print(f"Nombre cambiado a {nombre}")
+
                 elif eleccion == "2":
-                    apellido = input("Ingrese nuevo apellido")
+                    apellido = input("Ingrese nuevo apellido \n")
                     cliente[3] = apellido
                     print(f"Apellido cambiado a {apellido}")
+
                 else:
                     print("Eleccion incorrecta")
-                encontrado = True
+                    print("==============================")
+                    
+                # encontrado = True
                 break
         
         if not encontrado:
             print("No se encuentra el rut del cliente")    
-    
+            print("====================================")
+
                 
     #DICCIONARIO CON MENU - ADMINISTRACION CLIENTES       
     menuClientes = {1: vistaClientes, 
@@ -102,11 +112,10 @@ def administracionHabitaciones():
                 break
             else:
                 print("Cliente no encontrado")
-        
-        
+
     def modificarHabitacion():
         encontrado: False
-        idHabitacion = input("Ingrese la habitacion que quiere eliminar")
+        idHabitacion = input("Ingrese la habitacion que quiere eliminar \n")
 
         for habitacion in listaHabitaciones:
             if habitacion[1] == idHabitacion:
@@ -120,10 +129,9 @@ def administracionHabitaciones():
                 print("Habitacion no encontrado")
             encontrado = True
             break
-        
         if not encontrado:
+            modificarHabitacion()
             print("No se encuentra el rut del cliente")  
-    
     #DICCIONARIO CON MENU - ADMINISTRACION HABITACIONESS        
     menuHabitaciones = {1:vistaHabitaciones, 
                         2:registros.registroHabitacion,
@@ -180,26 +188,29 @@ def administracionReservaciones():
 
 
 
-
 #MENU ADMIN
 def menuAdmin():
     #DICCIONARIO CON MENU - MENU GENERAL ADMIN LOGEADO
     menu ={1:administracionClientes, 
         2:administracionHabitaciones,
-        3:administracionReservaciones
+        3:administracionReservaciones,
+        # 4:exit
         }
 
     respuesta = "si"
     while respuesta == "si":
-        print("\n--- Menú Principal ---")
+        print("\n--- Menú Principal Administrador---")
         print("1. Administrar clientes")
-        # print("2. Administrar trabajadores")
         print("2. Administrar habitaciones")
         print("3. Administrar reservaciones")
+        print("4. Salir del programa")
+        
         
         opcion = int(input("ELija una opcion \n"))
         menu.get(opcion, default)()
-
+        
+# get(opcion, default) busca el valor de la opcion dentro del diccionario menu
+        
         respuesta = input("Quiere hacer algo mas en el menu general? si/no \n")
         respuesta = respuesta.lower()
-        
+    
