@@ -2,10 +2,12 @@ import registros
 import login
 import os
 
-menuLogin={1:login.loginTrabajador,2:registros.registroTrabajador}
+menuLogin={1:login.loginTrabajador,2:registros.registroTrabajador,3:exit}
 
 def default():
     print("Opcion fuera de rango")
+    return
+
 
 respuesta="si"
 
@@ -26,7 +28,8 @@ while respuesta == "si":
     
     opcion = int(input("Elija una opcion\n"))
     menuLogin.get(opcion,default)()                   
-    
+    if opcion == 3:
+        break
     respuesta = input("Desea hacer algo más?: \n")
     respuesta = respuesta.lower()
     
