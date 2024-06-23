@@ -104,11 +104,12 @@ def administracionHabitaciones():
     #REGISTRAR HABITACION DIRECTO AL MENU
 
     def eliminarHabitacion():
-        idHabitacion = input("Ingrese la habitacion que quiere eliminar")
+        idHabitacion = input("Ingrese la habitacion que quiere eliminar \n")
         for habitacion in listaHabitaciones:
             if habitacion[1] == idHabitacion:
                 listaHabitaciones.remove(habitacion)
                 print("Habitacion eliminado")
+                print("==============================")
                 break
             else:
                 print("Cliente no encontrado")
@@ -130,8 +131,9 @@ def administracionHabitaciones():
             encontrado = True
             break
         if not encontrado:
-            modificarHabitacion()
+            modificarHabitacion() # VER SI RESULTA
             print("No se encuentra el rut del cliente")  
+            print("==============================")
     #DICCIONARIO CON MENU - ADMINISTRACION HABITACIONESS        
     menuHabitaciones = {1:vistaHabitaciones, 
                         2:registros.registroHabitacion,
@@ -166,8 +168,6 @@ def administracionReservaciones():
         for x in listaReservaciones:
             print(f"ID:{x[1]} \n Cliente:{x[2]} \n Habitacion:{x[3]}")
             
-        
-        
     menuReservaciones = {1:vistaReservas,
                         2:registros.registroReserva,
                         5:menuAdmin}
