@@ -1,44 +1,40 @@
 import menuAdmin
 
 ##MENU ADMIN - REGISTRO HABITACIONES    
-registroHabitaciones = [{1:11, 2: "1", 3: "Individual",4:20000,"reservado":False},
-                        {1:12, 2: "2", 3: "Doble", 4: 25000, "reservado":True},
-                        {1:13, 2: "3", 3: "Suite", 4: 42000, "reservado":False},
-                        {1:14, 2: "4", 3: "Individual", 4: 15000, "reservado":True},
-                        {1:15, 2: "5", 3: "Doble", 4: 30000, "reservado":False}
+registroHabitaciones = [{1:1, 2: "1", 3: "Individual",4:20000,"reservado":False},
+                        {1:2, 2: "2", 3: "Doble", 4: 25000, "reservado":True},
+                        {1:3, 2: "3", 3: "Suite", 4: 42000, "reservado":False},
+                        {1:4, 2: "4", 3: "Individual", 4: 15000, "reservado":True},
+                        {1:5, 2: "5", 3: "Doble", 4: 30000, "reservado":False}
                         ]
-
+def vistaHabitaciones():
+    for x in registroHabitaciones:
+        print("==============================")
+        print(f" ID: {x[1]} \n  N°Habitacion: {x[2]} \n Tipo:{x[3]} \n Valor:${[4]}, \n Etado:{x["reservado"]} ")
+        print("==============================")
+        
 def registroHabitacion():
-    registro = {1:"",2:"",3:"",4:"",5:""}
-    idHaHabitacion = int(input("Ingrese id para habitacion"))#HACERLO ALEATORIO O AUTOINCREMENTAL
-    registro[1] = idHaHabitacion
-        # idHabitacion = []
-        ## IDS autoincrementales
-        # autoincrementalIdHabitacion = 1
-    numeroHabitacion = int("Ingrese numero de habitacion")#Tambien aleatorio o autoincremental
+    registro = {1:"",2:"",3:"",4:"","reservado":""}
+    idHabitacion = len(registroHabitaciones)+1 #autoincremental
+    registro[1] = idHabitacion
+    numeroHabitacion = len(registroHabitaciones)+1 #autoincremental
     registro[2] = numeroHabitacion
     tipoHabitacion = input("Ingrese tipo de habitacion")
     registro[3] = tipoHabitacion
-    valorHabitacion = int(input("Ingrese valor habitacion"))
+    valorHabitacion = input("Ingrese valor habitacion")
     registro[4] = valorHabitacion
-    estadoHabitacion = input("Reservado/Disponible")
-    registro[5] = estadoHabitacion
+    estadoHabitacion = False
+    registro["reservado"] = estadoHabitacion
     
     registroHabitaciones.append(registro)
     print(f"""
         Habitacion creada \n 
-        ID: {idHaHabitacion} \n 
+        ID: {idHabitacion} \n 
         Numero habitacion: {numeroHabitacion} \n 
         Tipo habitacion: {tipoHabitacion} \n 
         Valor habitacion: {valorHabitacion}
         """)
-    
 
-def vistaHabitaciones():
-    for x in registroHabitaciones:
-        print("==============================")
-        print(f" ID: {x[1]} \n  N°Habitacion: {x[2]} \n Tipo:{x[3]} \n Valor:${4}, \n Etado:{x["reservado"]} ")
-        print("==============================")
 
 def eliminarHabitacion():
         idHabitacion = input("Ingrese la habitacion que quiere eliminar \n")
