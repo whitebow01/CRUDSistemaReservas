@@ -4,7 +4,7 @@ import menuAdmin
 registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"},
                 {1: "17854629-4", 2: "Carlos", 3: "Fernández"},
                 {1: "20316587-7", 2: "Ana", 3: "Martínez"},
-                {1: "18923467-1", 2: "Jorge", 3: "Pérez"},
+                {1: "18923467-1", 2: "Jorge", 3: "Pérez"},                #No deja usar menuGeneral.py al poner el rut con y sin - y digito identificador
                 ]
 
 
@@ -18,7 +18,7 @@ def vistaClientes():
             print("==============================")
             print(f" Rut: {x[1]} \n  Nombre: {x[2]} \n Apellido:{x[3]}")
             print("==============================")
-            
+        
             
 #REGISTRAR CLIENTES
 def registroCliente():
@@ -31,11 +31,16 @@ def registroCliente():
     registro[3] = apellidoCliente
     registroClientes.append(registro)
     
-    print(f"Cliente {nombreCliente} ingresado correctamente")
-
-
-
-
+    print(f"""
+        =================================
+        Cliente registrado 
+        =================================
+        RUT: {rutCliente}
+        Nombre cliente: {nombreCliente}
+        Apellido cliente: {apellidoCliente}
+        =================================
+        """)
+    
 #ELIMINAR UN CLIENTE
 def eliminarCliente():
     rutCliente = input("Ingresa el rut a eliminar \n")

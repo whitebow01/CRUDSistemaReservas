@@ -28,11 +28,14 @@ def registroHabitacion():
     
     registroHabitaciones.append(registro)
     print(f"""
-        Habitacion creada \n 
-        ID: {idHabitacion} \n 
-        Numero habitacion: {numeroHabitacion} \n 
-        Tipo habitacion: {tipoHabitacion} \n 
+        =================================
+        Habitacion creada
+        =================================
+        ID: {idHabitacion}  
+        Numero habitacion: {numeroHabitacion}
+        Tipo habitacion: {tipoHabitacion}
         Valor habitacion: {valorHabitacion}
+        =================================
         """)
 
 

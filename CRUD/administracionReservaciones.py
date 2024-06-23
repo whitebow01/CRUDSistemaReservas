@@ -47,6 +47,18 @@ def registroReserva():
     if not habitacionEncontrada:
         print("Habitacion no encontrada")
         return
+
+    print(f"""
+        =================================
+        Reserva registrada 
+        =================================
+        ID: {idReserva} 
+        RUT cliente: {cliente[1]}
+        Nombre cliente: {cliente[2]} 
+        ID Habitacion: {habitacion[1]} 
+        N° Habitacion: {habitacion[2]}
+        =================================
+        """)
     
 def vistaReservas():
     for x in registroReservaciones:
