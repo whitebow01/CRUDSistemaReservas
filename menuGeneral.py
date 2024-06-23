@@ -1,8 +1,8 @@
-import registros
+import CRUD.administracionTrabajadores
 import login
 
 
-menuLogin={1:login.loginTrabajador,2:registros.registroTrabajador,3:exit}
+menuLogin={1:login.loginTrabajador,2:CRUD.administracionTrabajadores.registroTrabajador,3:exit}
 
 def default():
     print("Opcion fuera de rango")
