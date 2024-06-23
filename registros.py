@@ -42,7 +42,7 @@ def registroCliente():
     print(f"Cliente {nombreCliente} ingresado correctamente")
 
 
-##MENU ADMIN - REGISTRO HABITACIONES
+##MENU ADMIN - REGISTRO HABITACIONES    
 registroHabitaciones = [{1:11, 2: "1", 3: "Individual",4:20000,"reservado":False},
                         {1:12, 2: "2", 3: "Doble", 4: 25000, "reservado":True},
                         {1:13, 2: "3", 3: "Suite", 4: 42000, "reservado":False},
