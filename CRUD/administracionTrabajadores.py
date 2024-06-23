@@ -14,7 +14,15 @@ def registroTrabajador():
 
     registroTrabajadores.append(registro)
 
+    print("=============================================================")
     print(f"Bienvenido, {nombreTrabajador}, ahora puede iniciar sesion")
-
-    print(f"Tus datos:  \n rut: {rutTrabajador} \n nombre: {nombreTrabajador}\n apellido:{apellidoTrabajador}\n contraseña: """)
-
+    print(f"""
+            =================================
+            Tus datos:
+            =================================
+            RUT: {rutTrabajador}
+            Nombre cliente: {nombreTrabajador}
+            Apellido cliente: {apellidoTrabajador}
+            =================================
+            """)
+    
