@@ -4,7 +4,7 @@ import menuAdmin
 registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"},
                 {1: "17854629-4", 2: "Carlos", 3: "Fernández"},
                 {1: "20316587-7", 2: "Ana", 3: "Martínez"},
-                {1: "18923467-1", 2: "Jorge", 3: "Pérez"},                #No deja usar menuGeneral.py al poner el rut con y sin - y digito identificador
+                {1: "18923467-1", 2: "Jorge", 3: "Pérez"},                
                 ]
 
 
@@ -47,6 +47,7 @@ def eliminarCliente():
     for cliente in registroClientes:
         if cliente[1] == rutCliente:
             registroClientes.remove(cliente)
+            print("==============================")
             print("Cliente eliminado")
             print("==============================")
 
@@ -69,7 +70,7 @@ def modificarCliente():
                 print("==============================")
 
                 print("1.Nombre \n 2.Apellido")
-                eleccion = input("Seleccione cual quiere modificar??")
+                eleccion = input("Seleccione quiere modificar??")
                 
                 if eleccion == "1":
                     nombre = input("Ingrese nuevo nombre \n")
