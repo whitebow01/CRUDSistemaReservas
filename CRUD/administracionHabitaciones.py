@@ -66,23 +66,32 @@ def registroHabitacion():
     
 #ELIMINAR UNA HABITACION
 def eliminarHabitacion():
-        idHabitacion = int(input("Ingrese la habitacion que quiere eliminar \n"))
-        for habitacion in registroHabitaciones:
-            if habitacion[1] == idHabitacion:
-                registroHabitaciones.remove(habitacion)
-                print("==============================")
-                print("Habitacion eliminada")
-                print("==============================")
-                import time
-                time.sleep(2)
-                
-            else:
-                print("==============================")
-                print("Habitacion no encontrado")
-                print("==============================")
-                import time
-                time.sleep(2)
-                
+
+    while True:
+        try:
+            idHabitacion = int(input("Ingrese la habitacion que quiere eliminar \n"))
+            break
+        except ValueError:
+            print("Error. Por favor, ingrese solo numeros")
+        encontrada = False
+
+    for habitacion in registroHabitaciones:
+        if habitacion[1] == idHabitacion:
+            registroHabitaciones.remove(habitacion)
+            print("==============================")
+            print("Habitacion eliminada")
+            print("==============================")
+            encontrada = True
+            import time
+            time.sleep(2)
+            break            
+    if not encontrada:
+        print("══════════════════════════════")
+        print("Habitacion no encontrado")
+        print("══════════════════════════════")
+        # import time
+        time.sleep(2)
+            
             
 #MODIFICAR UNA HABITACION                
 def modificarHabitacion():
@@ -91,42 +100,50 @@ def modificarHabitacion():
 
     for habitacion in registroHabitaciones:
         if habitacion[1] == idHabitacion:
+            encontrado = True
             print("Habitacion encontrado")
-            print("==============================")
+            print("══════════════════════════════")
             print("1.Tipo \n 2.Valor")
             eleccion = input("Seleccione cual quiere modificar?? \n")
             if eleccion == "1":
-                tipo = input("Ingrese  el nuevo tipo de habitacion \n")
-                habitacion[3] = tipo
-                print(f"""
-                        =================================
-                        Habitacion modificada
-                        =================================
-                        ID: {habitacion[1]}  
-                        Numero habitacion: {habitacion[2]}
-                        Tipo habitacion: {habitacion[3]}
-                        Valor habitacion:${habitacion[4]}
-                        Estado habitacion: {habitacion["reservado"]}
-                        =================================
-                        """)
-                import time
-                time.sleep(2)
-                break
+                print("Individual - Doble - Suite")
+                
+                validacion = False
+                while not validacion:
+                    tipo = input("Ingrese  el nuevo tipo de habitacion \n")
+                    if tipo in ["Individual", "Doble", "Suite"]:
+                        habitacion[3] = tipo
+                        validacion = True
+                        print(f"""
+                                ═════════════════════════════════
+                                Habitacion modificada
+                                ═════════════════════════════════
+                                ID: {habitacion[1]}  
+                                Numero habitacion: {habitacion[2]}
+                                Tipo habitacion: {habitacion[3]}
+                                Valor habitacion:${habitacion[4]}
+                                Estado habitacion: {habitacion["reservado"]}
+                                ═════════════════════════════════
+                                """)
+                        import time
+                        time.sleep(2)
+                        break
             elif eleccion == "2":
+                
                 while True:
                     try:
                         valor = int(input("Ingrese nuevo valor de la habitacion \n"))
                         habitacion[4] = valor
                         print(f"""
-                        =================================
+                        ═════════════════════════════════
                         Habitacion modificada
-                        =================================
+                        ═════════════════════════════════
                         ID: {habitacion[1]}  
                         Numero habitacion: {habitacion[2]}
                         Tipo habitacion: {habitacion[3]}
                         Valor habitacion:${habitacion[4]}
                         Estado habitacion: {habitacion["reservado"]}
-                        =================================
+                        ═════════════════════════════════
                         """)
                         import time
                         time.sleep(2)
@@ -136,18 +153,19 @@ def modificarHabitacion():
                         print("Error. Por favor, ingrese cifras en numeros")
                         import time
                         time.sleep(2)
+                        
             else:
                 print("Elección incorrecta")
                 return
-            encontrado = True
+            
             break
     
     if not encontrado:
         # modificarHabitacion() # VER SI RESULTA
-        print("==============================")
+        print("══════════════════════════════")
 
         print("No se encuentra el id de la habitacion")  
-        print("==============================")
+        print("══════════════════════════════")
         import time
         time.sleep(2)    
             
