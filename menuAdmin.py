@@ -8,12 +8,14 @@ def default():
     return
 
 def MenuAnterior():
+    import time
+    print("Saliendo al menu general...")
+    time.sleep(2)  #3 segundos para ir al menu
     import menuGeneral
     menuGeneral.menuGeneralInicio()
 
 #MENU ADMIN
 def menuAdministrador():
-
     #DICCIONARIO CON MENU - MENU GENERAL ADMIN LOGEADO
     menu ={1:CRUD.administracionClientes.menuCliente, 
         2:CRUD.administracionHabitaciones.menuHabitacion,
@@ -23,7 +25,7 @@ def menuAdministrador():
         }
 
     respuesta = "si"
-    while respuesta == "si":
+    while True:
         print("\n--- Menú Principal Administrador---")
         print("1. Administrar clientes")
         print("2. Administrar habitaciones")
@@ -31,15 +33,9 @@ def menuAdministrador():
         print("4. Volver al menu general")
         print("5. Salir del programa")
         
-        try:
+        try: ##validacion solo numeros
             opcion = int(input("ELija una opcion \n"))
+            menu.get(opcion, default)()
         except ValueError:
             print("Error. Por favor, ingrese solo numeros")
-        
-        menu.get(opcion, default)()
-        
 # get(opcion, default) busca el valor de la opcion dentro del diccionario menu
-        
-        respuesta = input("Quiere hacer algo mas en el menu general? si/no \n")
-        respuesta = respuesta.lower()
-    
