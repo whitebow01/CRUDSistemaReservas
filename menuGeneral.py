@@ -1,24 +1,19 @@
 import CRUD.administracionTrabajadores
 import login
 
-
-
 def default():
     print("Opcion fuera de rango")
     return
 
 def menuGeneralInicio():
+    #MENU QUE APARECERA EN LOGIN
     menuLogin={1:login.loginTrabajador,
             2:CRUD.administracionTrabajadores.registroTrabajador,
             3:exit
             }
-
-
-
+    
     respuesta="si"
-
     while respuesta == "si":
-
         print("╔════════════════════════════════════════════════╗")
         print("║ Bienvenido al menú general                     ║")
         print("║                                                ║")
@@ -43,7 +38,5 @@ def menuGeneralInicio():
             print("Error, debe responder si o no")    
             respuesta = input("Desea hacer algo más?: si/no \n")
             respuesta = respuesta.lower()
-            
-        print("Gracias por usar el programa!, Hasta pronto")
-        
+                    
 menuGeneralInicio()
