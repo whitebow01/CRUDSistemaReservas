@@ -6,14 +6,19 @@ import CRUD.administracionTrabajadores
 def default():
     print("Opcion fuera de rango") 
     return
+def salir():
+    import menuGeneral
+    menuGeneral.menuGeneralInicio()
 
 #MENU ADMIN
 def menuAdministrador():
+
     #DICCIONARIO CON MENU - MENU GENERAL ADMIN LOGEADO
     menu ={1:CRUD.administracionClientes.menuCliente, 
         2:CRUD.administracionHabitaciones.menuHabitacion,
         3:CRUD.administracionReservaciones.menuReserva,
-        4:exit
+        4:salir,
+        5:exit
         }
 
     respuesta = "si"
@@ -22,9 +27,15 @@ def menuAdministrador():
         print("1. Administrar clientes")
         print("2. Administrar habitaciones")
         print("3. Administrar reservaciones")
-        print("4. Salir del programa")
+        print("4. Volver al menu general")
+        print("5. Salir del programa")
+        
         
         opcion = int(input("ELija una opcion \n"))
+        if opcion == 3:
+            print("Saliendo al menu general")
+            break
+        
         menu.get(opcion, default)()
         
 # get(opcion, default) busca el valor de la opcion dentro del diccionario menu
