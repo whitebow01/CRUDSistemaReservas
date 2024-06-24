@@ -6,7 +6,8 @@ import CRUD.administracionTrabajadores
 def default():
     print("Opcion fuera de rango") 
     return
-def salir():
+
+def MenuAnterior():
     import menuGeneral
     menuGeneral.menuGeneralInicio()
 
@@ -17,7 +18,7 @@ def menuAdministrador():
     menu ={1:CRUD.administracionClientes.menuCliente, 
         2:CRUD.administracionHabitaciones.menuHabitacion,
         3:CRUD.administracionReservaciones.menuReserva,
-        4:salir,
+        4:MenuAnterior,
         5:exit
         }
 
@@ -30,11 +31,10 @@ def menuAdministrador():
         print("4. Volver al menu general")
         print("5. Salir del programa")
         
-        
-        opcion = int(input("ELija una opcion \n"))
-        if opcion == 3:
-            print("Saliendo al menu general")
-            break
+        try:
+            opcion = int(input("ELija una opcion \n"))
+        except ValueError:
+            print("Error. Por favor, ingrese solo numeros")
         
         menu.get(opcion, default)()
         
