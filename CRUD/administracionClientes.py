@@ -23,11 +23,11 @@ def vistaClientes():
 #REGISTRAR CLIENTES
 def registroCliente():
     registro = {1:"",2:"",3:""}
-    rutCliente = input("Ingresa rut del cliente")
+    rutCliente = input("Ingresa rut del cliente \n")
     registro[1] = rutCliente
-    nombreCliente = input("Ingresa el nombre del cliente")
+    nombreCliente = input("Ingresa el nombre del cliente \n")
     registro[2] = nombreCliente
-    apellidoCliente = input("Ingrese apellido del cliente")
+    apellidoCliente = input("Ingrese apellido del cliente \n")
     registro[3] = apellidoCliente
     registroClientes.append(registro)
     
@@ -62,7 +62,7 @@ def modificarCliente():
 
     while not encontrado:
         
-        rutCliente = input("Ingresa el rut del cliente")
+        rutCliente = input("Ingresa el rut del cliente \n")
         for cliente in registroClientes:    
             if cliente[1] == rutCliente:
                 
@@ -70,7 +70,7 @@ def modificarCliente():
                 print("==============================")
 
                 print("1.Nombre \n 2.Apellido")
-                eleccion = input("Seleccione quiere modificar??")
+                eleccion = input("Seleccione quiere modificar?? \n")
                 
                 if eleccion == "1":
                     nombre = input("Ingrese nuevo nombre \n")
@@ -94,7 +94,7 @@ def modificarCliente():
         
         if not encontrado:
             print("No se encuentra el rut del cliente")    
-            pregunta = input("Quisiera intentar con otro rut?")
+            pregunta = input("Quisiera intentar con otro rut? \n")
             if pregunta != "si":
                 break
             

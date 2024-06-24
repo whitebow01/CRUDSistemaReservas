@@ -20,8 +20,8 @@ def vistaReservas():
 #REGISTRO DE RESERVACIONES
 def registroReserva():
     idReserva = len(registroReservaciones)+1 #Autoincremental
-    rutCliente = input("Igrese rut del cliente")
-    idHabitacion = int(input("Ingrese id habitacion"))
+    rutCliente = input("Igrese rut del cliente \n")
+    idHabitacion = int(input("Ingrese id habitacion \n"))
     
     clienteEncontrado = False
     for cliente in listaClientes:

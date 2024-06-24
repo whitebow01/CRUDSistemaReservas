@@ -29,6 +29,7 @@ while respuesta == "si":
     print("║                                                ║")
     print("╚════════════════════════════════════════════════╝")
     
+    
     opcion = int(input("Elija una opcion\n"))
     menuLogin.get(opcion,default)()                   
     if opcion == 3:
