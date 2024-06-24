@@ -2,31 +2,34 @@
 import re
 
 
-registroTrabajadores = [{1:"555",2:"k", 3:"Juan", 4: "Castro",5:"sss"}]
+# registroTrabajadores = [{1:555,2:"k", 3:"Juan", 4: "Castro",5:"sss"}]
+registroTrabajadores = [{1:"555", 2:"Juan", 3: "Castro",4:"sss"}]
 
 
 def registroTrabajador():
     registro = {1:"", 2:"",3:"", 4:""}
-    # rutTrabajador = input("Ingresa su rut")
-    # registro[1] = rutTrabajador
-    try:
-        rutTrabajador = int(input("Ingresa su rut sin guion ni digito verificador"))
-        registro[1] = rutTrabajador
-    except ValueError:
-        print("Error. No ingrese su numero verificador, solo numeros")
-    digito = input("Ingrese digito verificador")
-    registro[2] = digito
-    # print(f"{rutTrabajador}-{digito}")
+    while True:
+        try:
+            rutTrabajador = int(input("Ingresa su rut sin guión ni dígito verificador \n"))
+            break
+        except ValueError:
+            print("Error. No puede ingresar letras, solo numeros ni puntos")
+    digito = input("Ingrese digito verificador \n")
+    
+    rut = str(rutTrabajador)+"-"+digito
+    registro[1] = rut
+    
     nombreTrabajador = input("Ingrese su nombre \n")
-    registro[3] = nombreTrabajador
+    registro[2] = nombreTrabajador
     apellidoTrabajador = input("Ingrese su apellido \n")
-    registro[4] = apellidoTrabajador
+    registro[3] = apellidoTrabajador
 
     contraseñaTrabajador = input("Ingrese contraseña \n")
-    registro[5] = contraseñaTrabajador
+    registro[4] = contraseñaTrabajador
 
+    #guarda un registro en el total de registros
     registroTrabajadores.append(registro)
-
+    
     print("=============================================================")
     print(f"Bienvenido, {nombreTrabajador}, ahora puede iniciar sesion")
     print(f"""
@@ -39,3 +42,5 @@ def registroTrabajador():
             =================================
             """)
     
+    import time
+    time.sleep(3)
