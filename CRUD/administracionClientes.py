@@ -23,8 +23,17 @@ def vistaClientes():
 #REGISTRAR CLIENTES
 def registroCliente():
     registro = {1:"",2:"",3:""}
-    rutCliente = input("Ingresa rut del cliente \n")
-    registro[1] = rutCliente
+    while True:
+        try:
+            rutCliente = int(input("Ingresa su rut sin guión ni dígito verificador \n"))
+            break
+        except ValueError:
+            print("Error. No puede ingresar letras, solo numeros ni puntos")
+    digito = input("Ingrese digito verificador \n")
+    
+    rut = str(rutCliente)+"-"+digito
+    registro[1] = rut
+    
     nombreCliente = input("Ingresa el nombre del cliente \n")
     registro[2] = nombreCliente
     apellidoCliente = input("Ingrese apellido del cliente \n")
@@ -35,7 +44,7 @@ def registroCliente():
         =================================
         Cliente registrado 
         =================================
-        RUT: {rutCliente}
+        RUT: {rutCliente}-{digito}
         Nombre cliente: {nombreCliente}
         Apellido cliente: {apellidoCliente}
         =================================
