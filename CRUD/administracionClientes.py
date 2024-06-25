@@ -9,17 +9,26 @@ registroClientes=[{1:"20326456-8",2:"Luis",3:"Molla"},
 
 
 def default():
-    print("Opcion fuera de rango")
+    print("Opción fuera de rango")
     return
 
 #LISTA DE CLIENTES
 def vistaClientes():
-        for x in registroClientes:
-            print("==============================")
-            print(f" Rut: {x[1]} \n  Nombre: {x[2]} \n Apellido:{x[3]}")
-            print("==============================")
+    cont = 0
+    for x in registroClientes:
+        print("══════════════════════════════")
+        print(f" Rut: {x[1]} \n  Nombre: {x[2]} \n Apellido:{x[3]}")
+        print("══════════════════════════════")
         
+    for f in registroClientes:
+        if f[1] != 0:
+            cont +=1
             
+    print(f"Clientes registrados: {cont}")
+    print("══════════════════════════════")
+    import time
+    time.sleep(2)
+    
 #REGISTRAR CLIENTES
 def registroCliente():
     registro = {1:"",2:"",3:""}
@@ -28,8 +37,8 @@ def registroCliente():
             rutCliente = int(input("Ingresa su rut sin guión ni dígito verificador \n"))
             break
         except ValueError:
-            print("Error. No puede ingresar letras, solo numeros ni puntos")
-    digito = input("Ingrese digito verificador \n")
+            print("Error. No puede ingresar letras, ni signos")
+    digito = input("Ingrese digito verificador sin guíon\n")
     
     rut = str(rutCliente)+"-"+digito
     registro[1] = rut
@@ -41,29 +50,43 @@ def registroCliente():
     registroClientes.append(registro)
     
     print(f"""
-        =================================
+        ═════════════════════════════════
         Cliente registrado 
-        =================================
+        ═════════════════════════════════
         RUT: {rutCliente}-{digito}
         Nombre cliente: {nombreCliente}
         Apellido cliente: {apellidoCliente}
-        =================================
+        ═════════════════════════════════
         """)
     
 #ELIMINAR UN CLIENTE
 def eliminarCliente():
-    rutCliente = input("Ingresa el rut a eliminar \n")
+    print("════════════════════════════════")
+    print("Clientes registrados:")
+    print("═════════════════════════════════")
+
+    for clientes in registroClientes:
+        print(f" RUT: {clientes[1]}")
+
+    print("═════════════════════════════════")
+    
+    encontrado = False
+    rutCliente = input("Ingresa el RUT a eliminar \n")
     for cliente in registroClientes:
         if cliente[1] == rutCliente:
             registroClientes.remove(cliente)
-            print("==============================")
+            print("══════════════════════════════")
             print("Cliente eliminado")
-            print("==============================")
-
+            print("══════════════════════════════")
+            encontrado = True
+            import time
+            time.sleep(2)
             break
-        else:
-            print("Cliente no encontrado")
-            print("==============================")
+    if not encontrado:    
+        print("Cliente no encontrado")
+        print("══════════════════════════════")
+        import time
+        time.sleep(2)
 
 #MODIFICAR UN CLIENTE
 def modificarCliente():
@@ -71,12 +94,12 @@ def modificarCliente():
 
     while not encontrado:
         
-        rutCliente = input("Ingresa el rut del cliente \n")
+        rutCliente = input("Ingresa el RUT del cliente \n")
         for cliente in registroClientes:    
             if cliente[1] == rutCliente:
                 
                 print("Cliente encontrado")
-                print("==============================")
+                print("══════════════════════════════")
 
                 print("1.Nombre \n 2.Apellido")
                 eleccion = input("Seleccione quiere modificar?? \n")
@@ -92,19 +115,23 @@ def modificarCliente():
                     print(f"Apellido cambiado a {apellido}")
 
                 else:
-                    print("Eleccion incorrecta")
-                    print("==============================")
+                    print("Elección incorrecta")
+                    print("══════════════════════════════")
                     
                 encontrado = True
+                import time
+                time.sleep(2)
                 break
             
         if encontrado:
             break
         
         if not encontrado:
-            print("No se encuentra el rut del cliente")    
-            pregunta = input("Quisiera intentar con otro rut? \n")
+            print("No se encuentra el RUT del cliente")    
+            pregunta = input("Quisiera intentar con otro rut? si/no \n")
             if pregunta != "si":
+                import time
+                time.sleep(2)
                 break
             
 #DICCIONARIO CON MENU - ADMINISTRACION CLIENTES   
@@ -118,14 +145,14 @@ def menuCliente():
 
     respuesta = "si"
     while respuesta =="si":
-        print("\n--- Administración de Clientes ---")
-        print("Opcion 1:  Listar clientes")
-        print("Opcion 2:  Registrar cliente")
-        print("Opcion 3: Modificar cliente")
-        print("Opcion 4:  Eliminar cliente")
-        print("Opcion 5: Volver al menu principal")
+        print("\n═══ Administración de Clientes ═══")
+        print("Opción 1:  Listar clientes")
+        print("Opción 2:  Registrar cliente")
+        print("Opción 3:  Modificar cliente")
+        print("Opción 4:  Eliminar cliente")
+        print("Opción 5:  Volver al menu principal")
             
-        opcion = int(input("ELija una opcion \n"))
+        opcion = int(input("Elija una opción \n"))
         if opcion == 5:
             respuesta = input("Seguro quiere salir?? si/no \n")
             respuesta = respuesta.lower()

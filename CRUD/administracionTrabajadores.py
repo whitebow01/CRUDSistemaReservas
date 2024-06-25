@@ -30,16 +30,16 @@ def registroTrabajador():
     #guarda un registro en el total de registros
     registroTrabajadores.append(registro)
     
-    print("=============================================================")
+    print("══════════════════════════════════════════════════════")
     print(f"Bienvenido, {nombreTrabajador}, ahora puede iniciar sesion")
     print(f"""
-            =================================
+            ═══════════════════════════════════
             Tus datos:
-            =================================
+            ═══════════════════════════════════
             RUT: {rutTrabajador}-{digito}
             Nombre cliente: {nombreTrabajador}
             Apellido cliente: {apellidoTrabajador}
-            =================================
+            ═══════════════════════════════════
             """)
     
     import time

@@ -9,7 +9,7 @@ def default():
 
 def MenuAnterior():
     import time
-    print("Saliendo al menu general...")
+    print("Saliendo al menú general...")
     time.sleep(2)  #3 segundos para ir al menu
     import menuGeneral
     menuGeneral.menuGeneralInicio()
@@ -24,9 +24,8 @@ def menuAdministrador():
         5:exit
         }
 
-    respuesta = "si"
     while True:
-        print("\n--- Menú Principal Administrador---")
+        print("\n═══ Menú Principal Administrador ═══")
         print("1. Administrar clientes")
         print("2. Administrar habitaciones")
         print("3. Administrar reservaciones")
@@ -34,7 +33,7 @@ def menuAdministrador():
         print("5. Salir del programa")
         
         try: ##validacion solo numeros
-            opcion = int(input("ELija una opcion \n"))
+            opcion = int(input("ELija una opción \n"))
             menu.get(opcion, default)()
         except ValueError:
             print("Error. Por favor, ingrese solo numeros")

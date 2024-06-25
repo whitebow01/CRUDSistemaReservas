@@ -2,7 +2,7 @@ import CRUD.administracionTrabajadores
 import login
 
 def default():
-    print("Opcion fuera de rango")
+    print("Opción fuera de rango")
     return
 
 def menuGeneralInicio():
@@ -17,7 +17,7 @@ def menuGeneralInicio():
         print("╔════════════════════════════════════════════════╗")
         print("║ Bienvenido al menú general                     ║")
         print("║                                                ║")
-        print("║ Eliga su opción:                               ║")
+        print("║ Eliga su opción                                ║")
         print("║                                                ║")
         print("║ Opción 1 > Iniciar sesión como administrador   ║")
         print("║                                                ║")
@@ -29,10 +29,12 @@ def menuGeneralInicio():
         
         #validacion solo numeros
         try:
-            opcion = int(input("Elija una opcion\n"))
+            opcion = int(input("Elija una opción\n"))
             menuLogin.get(opcion,default)()   
         except ValueError:
             print("Error. Por favor, ingrese solo numeros")
+            import time
+            time.sleep(2)
         #validacion si o no
         while respuesta not in ["si", "no"]: 
             print("Error, debe responder si o no")    

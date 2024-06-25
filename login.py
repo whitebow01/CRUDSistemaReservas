@@ -29,8 +29,8 @@ def loginTrabajador():
     if usuarioCorrecto and contraseñaCorrecta == True:
 
         menuAdmin.menuAdministrador() 
-        #Si todo se cumple, entra al archivo crudSistemaReserva
-        #y luego a la funcion menu admin que contiene:
+        #Si todo se cumple, entra al menu administrador
+        #y luego a la funcion menuadministrador que contiene:
             #Administracion clientes
             #Administracion trabajadores
             #Administracion habitaciones

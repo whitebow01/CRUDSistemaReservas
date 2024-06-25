@@ -16,3 +16,25 @@ listas como elementos, un diccionario que tenga un entero como identificado y li
 lista que contenga diccionario como elementos etc.
 
 - Revisar la Rubrica para ver las especificaciones.
+
+
+
+##############################
+FALTANTES:
+VALIDACIONES
+MENU ADMIN - LISTO
+MENU GENERAL - LISTO
+
+
+AGREGAR TIEMPO RETRASO A LOS REGISTROS. import time -     time.sleep(2)  #3 segundos para ir al menu
+
+QUIZAS AGREGAR UN WHILE EN LOS REGISTROS Para
+preguntar si quiere registrar otro cliente  y si no, retornar al menu
+
+CODDE PARA RUT:
+numero = 42
+texto = "El número es: "
+
+resultado = texto + str(numero)
+
+print(resultado)  # Salida: El número es: 42
