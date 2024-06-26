@@ -1,4 +1,5 @@
 Proyecto Sistema de reserva HAll hotel.
+
   Registros de clientes
   Registros de habitaciones
   Registro de reservaciones
