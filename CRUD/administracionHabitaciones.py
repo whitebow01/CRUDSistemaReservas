@@ -13,7 +13,7 @@ def vistaHabitaciones():
     cont = 0
     for x in registroHabitaciones:
         print("══════════════════════════════")
-        print(f" ID:{x[1]} \n N°Habitacion:{x[2]} \n Tipo:{x[3]} \n Valor:${x[4]}, \n Etado:{x["reservado"]}")
+        print(f" ID:{x[1]} \n N°Habitacion:{x[2]} \n Tipo:{x[3]} \n Valor:${x[4]}, \n Etado:{x['reservado']}")
         print("══════════════════════════════")
         
     for f in registroHabitaciones:
